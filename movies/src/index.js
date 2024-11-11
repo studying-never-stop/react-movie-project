@@ -13,6 +13,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import UpComing from './pages/upcomingMoviesPage'
 import WishListPage from "./pages/wishListPage";
 import PopularMoviesPage from "./pages/popularPage";
+import PersonPage from "./pages/PersonPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -40,6 +41,7 @@ const App = () => {
         <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />
         <Route path="/movies/wishlist" element={ <WishListPage /> } />
         <Route path="/movies/popular" element={ <PopularMoviesPage /> } />
+        <Route path="/cast" element={ <PersonPage /> } />
       </Routes>
       </MoviesContextProvider>
     </BrowserRouter>

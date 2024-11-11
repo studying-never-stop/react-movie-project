@@ -79,7 +79,7 @@ const MovieDetails = ({ movie, credits }) => {  // Don't miss this!
         sx={{...root}}
       >
         <li>
-          <Chip label="Cast" sx={{...chip}} color="primary" />
+          <Chip label="Casts" sx={{...chip}} color="primary" />
         </li>
         {credits.cast.map((p) => (
           <li key={p.name}>

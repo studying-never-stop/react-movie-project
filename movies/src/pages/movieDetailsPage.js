@@ -39,7 +39,7 @@ const MoviePage = (props) => {
     <>
       {movie ? (
         <>
-          <PageTemplate movie={movie}>
+          <PageTemplate movie={movie} title=" Detail ">
             <MovieDetails movie={movie} credits={creditsData}/>
           </PageTemplate>
         </>
