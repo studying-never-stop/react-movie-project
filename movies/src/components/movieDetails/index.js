@@ -21,9 +21,10 @@ const root = {
 };
 const chip = { margin: 0.5 };
 
-const MovieDetails = ({ movie }) => {  // Don't miss this!
+const MovieDetails = ({ movie, credits }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
-  console.log(movie);
+  // console.log(movie);
+  console.log(credits)
 
   return (
     <>
@@ -68,6 +69,19 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           <Chip label="Production Countries " sx={{...chip}} color="primary" />
         </li>
         {movie.production_countries.map((p) => (
+          <li key={p.name}>
+            <Chip label={p.name} sx={{...chip}} />
+          </li>
+        ))}
+      </Paper>
+      <Paper 
+        component="ul" 
+        sx={{...root}}
+      >
+        <li>
+          <Chip label="Cast" sx={{...chip}} color="primary" />
+        </li>
+        {credits.cast.map((p) => (
           <li key={p.name}>
             <Chip label={p.name} sx={{...chip}} />
           </li>
