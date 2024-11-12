@@ -21,7 +21,7 @@ const chip = { margin: 0.5 };
 const PersonDetails = ({ person, credits }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
   // console.log(person);
-  console.log(credits)
+  // console.log(credits)
 
 
   return (

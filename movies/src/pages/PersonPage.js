@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { getPersons } from "../api/tmdb-api";
 import PageTemplate from '../components/templatePersonListPage';
 import { useQuery } from 'react-query';
 import Spinner from '../components/spinner';
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
+import { MoviesContext } from "../contexts/moviesContext";
 
 const PersonPage = (props) => {
-
-  const {  data, error, isLoading, isError }  = useQuery('person', getPersons)
+  const { page } = useContext(MoviesContext)
+  const {  data, error, isLoading, isError }  = useQuery(["person", { page: page }], getPersons)
 
   if (isLoading) {
     return <Spinner />
