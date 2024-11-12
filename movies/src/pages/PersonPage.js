@@ -17,7 +17,7 @@ const PersonPage = (props) => {
     return <h1>{error.message}</h1>
   }  
   const casts = data.results;
-  console.log(casts)
+//   console.log(casts)
 
   return (
     <PageTemplate

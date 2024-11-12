@@ -8,7 +8,8 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
-import MovieReviews from "../movieReviews"
+import MovieReviews from "../movieReviews";
+import { Link } from "react-router-dom";
 
 
 const root = {
@@ -83,7 +84,15 @@ const MovieDetails = ({ movie, credits }) => {  // Don't miss this!
         </li>
         {credits.cast.map((p) => (
           <li key={p.name}>
-            <Chip label={p.name} sx={{...chip}} />
+            <Link to={`/person/${p.id}`}>
+            <Chip label={p.name} sx={{
+                ...chip,
+                '&:hover': {
+                  backgroundColor: 'blue', // 修改为蓝色
+                  color: 'white', // 可选，改变文字颜色
+                },
+              }} />
+            </Link>
           </li>
         ))}
       </Paper>

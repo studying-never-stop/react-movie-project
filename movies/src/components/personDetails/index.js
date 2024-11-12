@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Chip from "@mui/material/Chip";
 import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
 import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
@@ -20,7 +21,7 @@ const chip = { margin: 0.5 };
 const PersonDetails = ({ person, credits }) => {  // Don't miss this!
   const [drawerOpen, setDrawerOpen] = useState(false);
   // console.log(person);
-//   console.log(credits)
+  console.log(credits)
 
 
   return (
@@ -71,9 +72,17 @@ const PersonDetails = ({ person, credits }) => {  // Don't miss this!
         <li>
             <Chip label="Movies" sx={{ ...chip }} color="primary" />
         </li>
-        {credits.cast.map((p) => (
-            <li key={p.title}>
-            <Chip label={p.title} sx={{ ...chip }} />
+        {credits.cast.map((m) => (
+            <li key={m.title}>
+            <Link to={`/movies/${m.id}`}>
+                <Chip label={m.title} sx={{
+                ...chip,
+                '&:hover': {
+                  backgroundColor: 'blue', // 修改为蓝色
+                  color: 'white', // 可选，改变文字颜色
+                },
+              }} />
+            </Link>
             </li>
         ))}
         </Paper>
