@@ -23,12 +23,12 @@ function MovieListPageTemplate({ movies, title, action }) {
     if (type === "name") setNameFilter(value);
     else setGenreFilter(value);
   };
-  const { moviePage, popularPage, handlesetMoviePageChange, handlePopularPageChange } = useContext(MoviesContext);
+  const { moviePage, popularPage, upcomingPage, handleUpcomingPageChange, handlesetMoviePageChange, handlePopularPageChange } = useContext(MoviesContext);
 
    // 根据标题映射到对应的 page 和处理程序
    const pageMapping = {
     "Popular Movies": { page: popularPage, handlePageChange: handlePopularPageChange },
-    // "Upcoming Movies": { page: upcomingPage, handlePageChange: handleUpcomingPageChange },
+    "Upcoming Movies": { page: upcomingPage, handlePageChange: handleUpcomingPageChange },
     "Discover Movies": { page: moviePage, handlePageChange: handlesetMoviePageChange },
     // 根据需要在这里添加其他页面
   };

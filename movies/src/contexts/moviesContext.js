@@ -8,7 +8,8 @@ const MoviesContextProvider = (props) => {
   const [toWatch, setToWatch] = useState( [] )
   const [page, setPage] = useState(1); // 新增的 page 状态
   const [moviePage, setMoviePage] = useState(1); 
-  const [popularPage, setPopularMoviePage] = useState(1); 
+  const [popularPage, setPopularMoviePage] = useState(1);
+  const [upcomingPage, setupcomingMoviePage] = useState(1);  
 
   const addReview = (movie, review) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
@@ -63,6 +64,10 @@ const MoviesContextProvider = (props) => {
     setPopularMoviePage(value);
   };
 
+  const handleUpcomingPageChange = (event, value) => {
+    setupcomingMoviePage(value);
+  };
+
   return (
     <MoviesContext.Provider
       value={{
@@ -71,6 +76,7 @@ const MoviesContextProvider = (props) => {
         page,
         moviePage,
         popularPage,
+        upcomingPage, 
         addToFavorites,
         removeFromFavorites,
         addReview,
@@ -79,6 +85,7 @@ const MoviesContextProvider = (props) => {
         handlePageChange,
         handlesetMoviePageChange,
         handlePopularPageChange,
+        handleUpcomingPageChange,
       }}
     >
       {props.children}
