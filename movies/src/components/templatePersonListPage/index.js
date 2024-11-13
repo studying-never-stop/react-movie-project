@@ -18,7 +18,7 @@ function PersonPageTemplate({ persons, title, action }) {
       return p.name.toLowerCase().includes(nameFilter.toLowerCase());
     })
     .filter((p) => {
-      // 筛选性别，性别值为字符串 "1", "2", "3" 分别对应 女性、男性和未知
+      // 筛选性别，性别值为字符串 "1", "2", "3" 分别对应 女性、男性和未知, "0"表示 全部
       return genderFilter !== "0" ? String(p.gender) === genderFilter : true;
     });
 
